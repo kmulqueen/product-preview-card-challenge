@@ -5,4 +5,172 @@
   --color-grey: hsl(228, 12%, 48%);
   --color-cream: hsl(30, 38%, 92%);
   --color-white: hsl(0, 0%, 100%);
+
+  --font-size-xs: 0.6875rem; /* 11px */
+  --font-size-sm: 0.75rem; /* 12px */
+  --font-size-md: 0.8125rem; /* 13px */
+  --font-size-base: 0.875rem; /* 14px */
+  --font-size-lg: 2rem; /* 32px */
+
+  --spacing-50: 0.25rem; /* 4px */
+  --spacing-100: 0.5rem; /* 8px */
+  --spacing-200: 1rem; /* 16px */
+  --spacing-300: 1.5rem; /* 24px */
+  --spacing-400: 2rem; /* 32px */
+  --spacing-500: 2.5rem; /* 40px */
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
+}
+
+body {
+  background-color: var(--color-cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-500);
+  margin-top: calc(var(--spacing-500) * 2);
+}
+
+main {
+  border-radius: var(--spacing-100);
+  background-color: var(--color-white);
+  width: 90%;
+  overflow: hidden;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+figcaption {
+  padding: var(--spacing-400);
+  padding-bottom: 0;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+}
+
+.product-info {
+  padding: 0 var(--spacing-400) var(--spacing-400);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+
+.price-info {
+  display: flex;
+  gap: var(--spacing-200);
+  align-items: center;
+}
+
+.price {
+  color: var(--color-green-light);
+}
+
+.old-price {
+  color: var(--color-grey);
+}
+
+.cta {
+  background-color: var(--color-green-light);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background-color: var(--color-green-dark);
+}
+
+.cart-icon {
+  display: inline-block;
+  width: var(--spacing-200);
+  height: var(--spacing-200);
+  background-color: currentColor;
+
+  /* The key properties for the SVG mask */
+  -webkit-mask-image: url("./images/icon-cart.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+
+  /* Standard properties (for Firefox and other browsers) */
+  mask-image: url("./images/icon-cart.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.text-preset-1 {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  font-size: var(--font-size-lg);
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.text-preset-2 {
+  font-weight: 700;
+  line-height: 1.1;
+  font-size: var(--font-size-base);
+}
+
+.text-preset-3 {
+  font-weight: 500;
+  line-height: 1.6;
+  font-size: var(--font-size-base);
+  color: var(--color-grey);
+}
+
+.text-preset-4 {
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 5px;
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  color: var(--color-grey);
+}
+
+.text-preset-5 {
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: var(--font-size-md);
+}
+
+.attribution {
+  font-size: var(--font-size-xs);
+  text-align: center;
+  padding: var(--spacing-300);
+}
+
+.attribution a {
+  color: var(--color-green-light);
 }
